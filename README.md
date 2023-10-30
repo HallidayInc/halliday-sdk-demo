@@ -8,11 +8,14 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 There are two main screens, the login screen (src/LoginOptions.tsx) and the logged in screen (src/Content.tsx).
 
 When you first open the app, you'll see the login screen. Login in via one of the social login options or via email.
-<img width="569" alt="Screen Shot 2023-10-28 at 6 31 30 PM" src="https://github.com/HallidayInc/halliday-sdk-demo/assets/9602441/01425bb3-6b17-4d3b-b015-d07071d2dccd">
 
-You should now be shown the logged in screen, with a textbox and buttons below it to "Sign Date.now()", "Get Balances", etc. Upon page load, the textbox will show you your Halliday Smart Account information, including the smart account address (the address of the smart contract).
+<img width="330" alt="1" src="https://github.com/HallidayInc/halliday-sdk-demo/assets/9602441/9efd805d-6fbd-4ae7-aee6-d4937aa219de">
 
-<img width="581" alt="Screen Shot 2023-10-28 at 6 31 11 PM" src="https://github.com/HallidayInc/halliday-sdk-demo/assets/9602441/7d579ee7-c1e7-4f88-91bd-b6c209648a1f">
+
+After logging in, you should see the logged in screen, with a textbox and buttons below it to "Sign Date.now()", "Get Balances", etc. Upon page load, the textbox will show you your Halliday Smart Account information, including the smart account address (the address of the smart contract).
+
+<img width="330" alt="2" src="https://github.com/HallidayInc/halliday-sdk-demo/assets/9602441/500dea12-59d9-4610-b3c9-22147c40b3b2">
+
 
 In `src/Content.tsx`, you can see how it all works. In the `useEffect`, `hallidayClient.getUserInfo()` returns the non-custodial signer that is the owner of the Halliday Smart Account. Then, we call `hallidayClient.getOrCreateHallidayAAWallet()` with this signer's address as the `in_game_player_id`; however, you can pass in your own system's player id as well.
 

@@ -4,7 +4,7 @@ import { Halliday, BlockchainType, GetUserInfoResponse } from "halliday-sdk";
 import LogInOptions from "./LogInOptions";
 
 const hallidayClient = new Halliday(
-    "BJuf3koY_dQC-s0rcN_nsXNd7WOez8uuW4ucz9CVaQRajHgTvwsTXX-aMnHxC-T-gF3e-tbTydi_8cthWfoBp2w:db7764df-c689-4244-ae3a-1406a757ae40",
+    "API_KEY",
     BlockchainType.MUMBAI,
     true
 );
