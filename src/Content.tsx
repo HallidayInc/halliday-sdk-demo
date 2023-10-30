@@ -32,19 +32,20 @@ export default function Content() {
         // useEffect can't take an async function, so we can do this instead.
         (async () => {
             const userInfo: GetUserInfoResponse | null = await hallidayClient.getUserInfo();
-            if (userInfo) {
-                const wallet = await hallidayClient.getOrCreateHallidayAAWallet(
-                    userInfo.signer.address
-                );
-                setMessage(
-                    "Your Halliday Smart Account: " +
-                    JSON.stringify(wallet)
-                );
-                setIsLoggedIn(true);
-                setSigner(userInfo.signer);
-            } else {
+            if (!userInfo) {
                 setIsLoggedIn(false);
+                return;
             }
+
+            const wallet = await hallidayClient.getOrCreateHallidayAAWallet(
+                userInfo.signer.address
+            );
+            setMessage(
+                "Your Halliday Smart Account: " +
+                JSON.stringify(wallet)
+            );
+            setIsLoggedIn(true);
+            setSigner(userInfo.signer);
         })();
     }, []);
 
