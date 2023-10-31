@@ -23,4 +23,6 @@ In `src/Content.tsx`, you can see how it all works. In the `useEffect`, `hallida
 
 Using "Transfer 0.1 CRV to other account" (`hallidayClient.transferBalance`), "Transfer NFT to other account" (`hallidayClient.transferAsset`), and "Call Contract (Send 0.1 CRV to EOA)" (`hallidayClient.callContract`) require tinkering with the code to choose which player you want to send the asset to, or if you want to change which asset you want to send, or which contract you want to call. `transferBalance` and `transferAsset` can only be used to send assets to other Halliday players, so if you want to test these you can open two different browsers and sign up with two different users and send assets between them. If you want to send assets elsewhere or call contracts, use `callContract`.
 
+For more details, see https://docs.halliday.xyz/docs/use-social-login-to-create-an-account. For more information on each specific SDK method, click on the "JavaScript SDK" dropdown button on the menu on the left.
+
 Please let us know if you encounter any issues!
