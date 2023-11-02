@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { ethers } from "ethers";
-import { Halliday, BlockchainType, GetUserInfoResponse } from "halliday-sdk";
+import { Halliday, BlockchainType } from "halliday-sdk";
 import LogInOptions from "./LogInOptions";
 
 const hallidayClient = new Halliday(
     "API_KEY",
     BlockchainType.MUMBAI,
-    true
+    true,
+    {
+        verifierClientId: 'VERIFIER_CLIENT_ID',
+    }
 );
 
 export const buttonStyle: React.CSSProperties = {
@@ -31,7 +34,7 @@ export default function Content() {
     useEffect(() => {
         // useEffect can't take an async function, so we can do this instead.
         (async () => {
-            const userInfo: GetUserInfoResponse | null = await hallidayClient.getUserInfo();
+            const userInfo = await hallidayClient.getUserInfo();
             if (!userInfo) {
                 setIsLoggedIn(false);
                 return;

@@ -27,7 +27,7 @@
     "ethers": "6.4.2",
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",
-    "halliday-sdk": "1.0.32",
+    "halliday-sdk": "1.1.11",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
